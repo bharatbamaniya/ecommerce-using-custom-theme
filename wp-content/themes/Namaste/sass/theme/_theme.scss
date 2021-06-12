@@ -59,6 +59,18 @@
 	.navbar {
 		padding: 0;
 	}
+	#main-menu {
+		.nav-link {
+			color: white;
+			font-weight: 400;
+			&:hover {
+				color: var(--primary-pink-400) !important;
+			}
+		}
+		.active {
+			color: var(--primary-pink-400) !important;
+		}
+	}
 }
 
 #main-nav {
