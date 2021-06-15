@@ -57,6 +57,29 @@ $sm: 576px;
 		}
 	}
 }
+
+.black-btn {
+	background: #000;
+	box-shadow: 0 20px 50px 0 rgb(22, 22, 22 / 20%);
+	transform: translateY(0);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 1px;
+	line-height: 0;
+	margin-bottom: 0;
+	padding: 27px 44px;
+	border-radius: 25px;
+	outline: medium none;
+	color: #fff;
+	transition: 0.3s ease all;
+	&:hover {
+		box-shadow: 0 20px 50px 0 rgb(12, 9, 9 / 20%);
+		transform: translateY(-3px);
+	}
+}
+
 #top-nav {
 	background-color: black !important;
 	padding: 15px 0;
@@ -440,6 +463,153 @@ $sm: 576px;
 			}
 		}
 	}
+	.best-product-area {
+		position: relative;
+		.bg-height {
+			background-repeat: no-repeat;
+			width: 100%;
+			background-size: cover;
+		}
+		.product-wrapper {
+			background-color: #fff7d8;
+			.product-man {
+				left: 9%;
+				bottom: 0;
+				z-index: 1;
+			}
+		}
+		.vertical-text span {
+			text-orientation: 150deg;
+			writing-mode: vertical-lr;
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			font-size: 117px;
+			font-family: "Poppins", sans-serif;
+			font-weight: 700;
+			text-transform: uppercase;
+			-webkit-text-stroke: 1px #e6dfc6;
+			-webkit-text-fill-color: transparent;
+			position: relative;
+			z-index: 0;
+		}
+		.best-product-caption {
+			padding-top: 150px;
+			padding-bottom: 130px;
+			h2 {
+				color: #000;
+				font-size: 55px;
+				font-weight: 700;
+				line-height: 1.3;
+				margin-bottom: 19px;
+			}
+			p {
+				color: #373b41;
+				font-size: 20px;
+				margin-bottom: 55px;
+			}
+			a {
+				text-decoration: none;
+				&:hover,
+				&:active {
+					color: white;
+				}
+			}
+		}
+		.shape {
+			position: absolute;
+			right: 145px;
+			bottom: 64px;
+			opacity: 0.8;
+			img {
+				width: 167px;
+			}
+		}
+	}
+	.best-collection-area {
+		.best-left-cap {
+			h2 {
+				color: #000;
+				font-size: 45px;
+				font-weight: 700;
+				line-height: 1.3;
+				margin-bottom: 19px;
+			}
+			p {
+				color: #373b41;
+				font-size: 20px;
+				margin-bottom: 55px;
+			}
+			.shop1-btn {
+				background: #2577fd;
+				-moz-user-select: none;
+				text-transform: capitalize;
+				color: #fff;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 18px;
+				font-weight: 400;
+				letter-spacing: 1px;
+				line-height: 0;
+				margin-bottom: 0;
+				padding: 27px 44px;
+				border-radius: 25px;
+				margin: 10px;
+				cursor: pointer;
+				transition: color 0.4s linear;
+				position: relative;
+				z-index: 1;
+				border: 0;
+				overflow: hidden;
+				margin: 0;
+
+				box-shadow: 0 20px 50px 0 rgb(37, 119, 253, 0.2);
+			}
+		}
+		.best-left-img {
+			padding-top: 130px;
+		}
+		.best-right-cap {
+			float: right;
+
+			.best-single {
+				display: flex;
+				align-items: end;
+				.single-cap {
+					text-align: right;
+					h4 {
+						color: #000;
+						font-size: 18px;
+						line-height: 1.6;
+						font-family: "Poppins", sans-serif;
+					}
+					&.active {
+						background: #2577fd;
+						padding: 10px 30px;
+						border-radius: 10px;
+					}
+				}
+				.single-img {
+					padding-left: 25px;
+					img {
+						vertical-align: middle;
+						border-style: none;
+					}
+				}
+			}
+		}
+		.banner-img {
+			max-width: inherit !important;
+		}
+	}
+}
+
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+.lf-padding {
+	padding-left: 60px;
+	padding-right: 60px;
 }
 .f-right {
 	float: right;
@@ -453,9 +623,16 @@ $sm: 576px;
 		margin-top: 0;
 	}
 }
+.section-padding2 {
+	padding-top: 200px;
+	padding-bottom: 200px;
+}
 .section-padding30 {
 	padding-top: 200px;
 	padding-bottom: 170px;
+}
+.padding-bottom {
+	padding-bottom: 250px;
 }
 .mb-85 {
 	margin-bottom: 85px;
@@ -470,4 +647,22 @@ h4,
 h5,
 h6 {
 	font-family: "Playfair Display", serif;
+}
+
+.bounce-animate {
+	animation-name: float-bob;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	-moz-animation-name: float-bob;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-ms-animation-name: float-bob;
+	-ms-animation-duration: 2s;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-timing-function: linear;
+	-o-animation-name: float-bob;
+	-o-animation-duration: 2s;
+	-o-animation-iteration-count: infinite;
+	-o-animation-timing-function: linear;
 }

@@ -46,7 +46,7 @@ if (is_front_page()) {
             </main><!-- #main -->
         </div><!-- .row end -->
     </div>
-
+    <!-- <?php echo get_template_directory_uri(); ?>/img -->
     <section class="category-area section-padding30">
         <div class="container-fluid">
 
@@ -738,11 +738,11 @@ if (is_front_page()) {
     </section>
 
     <section class="best-product-area lf-padding">
-        <div class="product-wrapper bg-height" style="background-image:url(assets/img/categori/xcard.png.pagespeed.ic.HqMQFXi7Kw.webp)">
+        <div class="product-wrapper bg-height">
             <div class="container position-relative">
                 <div class="row justify-content-between align-items-end">
                     <div class="product-man position-absolute  d-none d-lg-block">
-                        <img src="assets/img/categori/xcard-man.png.pagespeed.ic.atpcqNbLer.webp" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xcard-man.png.pagespeed.ic.atpcqNbLer.webp" alt="">
                     </div>
                     <div class="col-xl-2 col-lg-2 col-md-2 d-none d-lg-block">
                         <div class="vertical-text">
@@ -761,7 +761,64 @@ if (is_front_page()) {
         </div>
 
         <div class="shape bounce-animate d-none d-md-block">
-            <img src="assets/img/categori/xcard-shape.png.pagespeed.ic.VnXz22z4_Q.webp" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/ring.png" alt="">
+        </div>
+    </section>
+
+    <section class="best-collection-area section-padding2">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-end">
+
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="best-left-cap">
+                        <h2>Best Collection of This Month</h2>
+                        <p>Designers who are interesten crea.</p>
+                        <a href="#" class="bttn shop1-btn">Shop Now</a>
+                    </div>
+                    <div class="best-left-img mb-30 d-none d-sm-block">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xcollection1.png.pagespeed.ic.OD6oEotzwr.webp" alt="">
+                    </div>
+                </div>
+
+                <div class="col-xl-2 col-lg-2 d-none d-lg-block">
+                    <div class="best-mid-img mb-30 ">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xcollection2.png.pagespeed.ic.1WKxZbEmZj.webp" alt="" style="max-width: none;">
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <div class="best-right-cap ">
+                        <div class="best-single mb-30">
+                            <div class="single-cap">
+                                <h4>Menz Winter<br> Jacket</h4>
+                            </div>
+                            <div class="single-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/xcollection3.png.pagespeed.ic.rKxUeaW_F4.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="best-right-cap">
+                        <div class="best-single mb-30">
+                            <div class="single-cap active">
+                                <h4>Menz Winter<br>Jacket</h4>
+                            </div>
+                            <div class="single-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/xcollection4.png.pagespeed.ic.3qNjVmyPpO.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="best-right-cap">
+                        <div class="best-single mb-30">
+                            <div class="single-cap">
+                                <h4>Menz Winter<br> Jacket</h4>
+                            </div>
+                            <div class="single-img">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/xcollection5.png.pagespeed.ic.LwLQ9InyzI.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div><!-- #full-width-page-wrapper -->
