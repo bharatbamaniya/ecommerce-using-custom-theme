@@ -25,12 +25,12 @@ if (is_front_page()) {
             <main class="site-main" id="main" role="main">
                 <div class="container-fluid">
                     <div class="row d-flex align-items-center justify-content-between">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-none d-md-block">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-md-block">
                             <div class="hero-img" data-animation="bounceIn" data-delay=".4s" style="animation-delay: 0.4s;">
                                 <img src="<?php echo get_template_directory_uri(); ?>/img/hero.webp" alt="">
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-8">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-6">
                             <div class="hero-caption">
                                 <span data-animation="fadeInRight" data-delay=".4s" class="" style="animation-delay: 0.4s;">60% Discount</span>
                                 <h1 data-animation="fadeInRight" data-delay=".6s" class="" style="animation-delay: 0.6s;">Winter <br> Collection</h1>
@@ -57,7 +57,7 @@ if (is_front_page()) {
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-xl-4 col-lg-6">
                     <div class="single-category mb-30">
                         <div class="category-img">
@@ -103,13 +103,12 @@ if (is_front_page()) {
             <div class="row product-btn d-flex justify-content-end align-items-end">
 
                 <div class="col-xl-4 col-lg-5 col-md-5">
-                    <div class="section-tittle mb-30">
+                    <div class="section-tittle mb-30 heading-center">
                         <h2>Latest Products</h2>
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-7 col-md-7">
                     <div class="properties__button f-right">
-
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
@@ -127,7 +126,7 @@ if (is_front_page()) {
 
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -153,7 +152,7 @@ if (is_front_page()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -176,7 +175,7 @@ if (is_front_page()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -202,7 +201,7 @@ if (is_front_page()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -225,7 +224,7 @@ if (is_front_page()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -248,7 +247,7 @@ if (is_front_page()) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
                                     <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
@@ -786,7 +785,7 @@ if (is_front_page()) {
                     </div>
                 </div>
 
-                <div class="col-xl-4 col-lg-6 col-md-6">
+                <div class="col-xl-4 col-lg-6 col-md-6 item-center">
                     <div class="best-right-cap ">
                         <div class="best-single mb-30">
                             <div class="single-cap">
@@ -821,6 +820,85 @@ if (is_front_page()) {
             </div>
         </div>
     </section>
+
+    <section class="latest-wrapper lf-padding">
+        <div class="latest-area latest-height d-flex align-items-center" data-background="<?php echo get_template_directory_uri(); ?>/img/latest-offer.png" style="background-image: url(&quot;<?php echo get_template_directory_uri(); ?>/img/latest-offer.png&quot;);">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-5 col-lg-5 col-md-6 offset-xl-1 offset-lg-1">
+                        <div class="latest-caption">
+                            <h2>Get Our<br>Latest Offers News</h2>
+                            <p>Subscribe news latter</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-6 ">
+                        <div class="latest-subscribe">
+                            <form action="#">
+                                <input type="email" placeholder="Your email here">
+                                <button>Shop Now</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="man-shape">
+                <img src="assets/img/collection/xlatest-man.png.pagespeed.ic.VkSdr1wWF0.webp" alt="" data-pagespeed-url-hash="79868044" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+            </div>
+        </div>
+    </section>
+
+    <div class="shop-method-area section-padding30">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-truck"></i>
+                        <h6>Free Shipping Method</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-lock"></i>
+                        <h6>Secure Payment System</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="single-method mb-40">
+                        <i class="fa fa-undo"></i>
+                        <h6>Easy Return System</h6>
+                        <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-wrapper lf-padding">
+        <div class="gallery-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gallery-items">
+                        <img src=" <?php echo get_template_directory_uri(); ?>/img/xgallery1.jpg.pagespeed.ic.mRum_SCVP_.webp" alt="" data-pagespeed-url-hash="3826380427" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xgallery1.jpg.pagespeed.ic.mRum_SCVP_.webp" alt="" data-pagespeed-url-hash="4120880348" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xgallery1.jpg.pagespeed.ic.mRum_SCVP_.webp" alt="" data-pagespeed-url-hash="120412973" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xgallery1.jpg.pagespeed.ic.mRum_SCVP_.webp" alt="" data-pagespeed-url-hash="414912894" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                    <div class="gallery-items">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/xgallery1.jpg.pagespeed.ic.mRum_SCVP_.webp" alt="" data-pagespeed-url-hash="709412815" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div><!-- #full-width-page-wrapper -->
 
 <?php
