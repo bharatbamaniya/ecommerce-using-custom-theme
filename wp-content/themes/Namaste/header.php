@@ -36,9 +36,7 @@ $container = get_theme_mod('understrap_container_type');
 				<div class="container">
 					<div class="top-nav-wrapper">
 						<a href="tel:777 928 133" class="contact">+777 928 133</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'understrap'); ?>">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+
 						<!-- The WordPress Menu goes here -->
 						<div class="navbar navbar-expand-md navbar-dark">
 							<?php

@@ -27,11 +27,11 @@ $container = get_theme_mod('understrap_container_type');
 				<footer class="site-footer" id="colophon">
 					<div class="container py-5">
 						<div class="row">
-							<div class="col-12 col-md">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
 								<div class="logo">Namaste</div>
 								<div class="d-block mb-3 text-muted desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</div>
 							</div>
-							<div class="col-6 col-md">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
 								<h5>Quick Links</h5>
 								<ul class="list-unstyled">
 									<li><a class="link-secondary" href="#">About</a></li>
@@ -40,7 +40,7 @@ $container = get_theme_mod('understrap_container_type');
 									<li><a class="link-secondary" href="#">Contact Us</a></li>
 								</ul>
 							</div>
-							<div class="col-6 col-md">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
 								<h5>New Products</h5>
 								<ul class="list-unstyled">
 									<li><a class="link-secondary" href="#">Women Rings</a></li>
@@ -49,7 +49,7 @@ $container = get_theme_mod('understrap_container_type');
 									<li><a class="link-secondary" href="#">Diamond Necklace</a></li>
 								</ul>
 							</div>
-							<div class="col-6 col-md">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
 								<h5>Support</h5>
 								<ul class="list-unstyled">
 									<li><a class="link-secondary" href="#">Frequently Asked Questions</a></li>
