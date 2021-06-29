@@ -126,466 +126,189 @@ if (is_front_page()) {
 
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
+
+                        <?php
+
+                        $args = array(
+                            'post_type' => 'product',
+                            'orderby' => 'rand',
+                            // 'order' => 'ASC',
+                            // 'product_cat' => 'bin',
+                            'posts_per_page' => 8,
+                        );
+                        $index = 0;
+                        $loop = new WP_Query($args);
+                        while ($loop->have_posts()) : $loop->the_post();
+                            global $product;
+                            $index++;
+
+                            $average_rating = $product->get_average_rating();
+                            $price = get_post_meta(get_the_ID(), '_regular_price', true);
+                            // $price will return regular price
+                            $sale = get_post_meta(get_the_ID(), '_sale_price', true);
+                            // $sale will return sale price
+
+                        ?>
+
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); ?>
+                                        <a href="<?php the_permalink(); ?>">
+                                            <img src="<?php echo $image[0]; ?>" alt="">
+                                        </a>
+
                                     </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <?php
+                                            printrating($average_rating);
+                                            ?>
+                                        </div>
+                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                        <div class="price">
+
+                                            <ul>
+                                                <li>Rs. <?php echo $sale ?>/-</li>
+                                                <li class="discount">Rs. <?php echo $price ?>/-</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php endwhile; ?>
+                        <?php wp_reset_query(); ?>
                     </div>
                 </div>
 
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
+                        <?php
+
+                        $args = array(
+                            'post_type' => 'product',
+                            'orderby' => 'post_date',
+                            'order' => 'ASC',
+                            // 'product_cat' => 'bin',
+                            'posts_per_page' => 8,
+                        );
+                        $index = 0;
+                        $loop = new WP_Query($args);
+                        while ($loop->have_posts()) : $loop->the_post();
+                            global $product;
+                            $index++;
+
+                            $average_rating = $product->get_average_rating();
+                            $price = get_post_meta(get_the_ID(), '_regular_price', true);
+                            // $price will return regular price
+                            $sale = get_post_meta(get_the_ID(), '_sale_price', true);
+                            // $sale will return sale price
+
+                        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); ?>
+                                        <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt=""> -->
+                                        <a href="<?php the_permalink(); ?>">
+                                            <img src="<?php echo $image[0]; ?>" alt="<?php //the_field('full_title'); 
+                                                                                        ?>">
+                                        </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
                                     </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <?php
+                                            printrating($average_rating);
+                                            ?>
+                                        </div>
+                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                        <div class="price">
+
+                                            <ul>
+                                                <li>Rs. <?php echo $sale ?>/-</li>
+                                                <li class="discount">Rs. <?php echo $price ?>/-</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php endwhile; ?>
+                        <?php wp_reset_query(); ?>
                     </div>
                 </div>
 
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
+
+                        <?php
+
+                        $args = array(
+                            'post_type' => 'product',
+                            'orderby' => 'post_date',
+                            'order' => 'ASC',
+                            // 'product_cat' => 'bin',
+                            'posts_per_page' => 8,
+                        );
+                        $index = 0;
+                        $loop = new WP_Query($args);
+                        while ($loop->have_posts()) : $loop->the_post();
+                            global $product;
+                            $index++;
+
+                            $average_rating = $product->get_average_rating();
+                            $price = get_post_meta(get_the_ID(), '_regular_price', true);
+                            // $price will return regular price
+                            $sale = get_post_meta(get_the_ID(), '_sale_price', true);
+                            // $sale will return sale price
+
+                        ?>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="single-product mb-60">
+                                    <div class="product-img">
+                                        <?php $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium'); ?>
+                                        <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt=""> -->
+                                        <a href="<?php the_permalink(); ?>">
+                                            <img src="<?php echo $image[0]; ?>" alt="<?php //the_field('full_title'); 
+                                                                                        ?>">
+                                        </a>
+                                        <div class="new-product">
+                                            <span>New</span>
+                                        </div>
                                     </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
+                                    <div class="product-caption">
+                                        <div class="product-ratting">
+                                            <?php
+                                            printrating($average_rating);
+                                            ?>
+                                        </div>
+                                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                        <div class="price">
+
+                                            <ul>
+                                                <li>Rs. <?php echo $sale ?>/-</li>
+                                                <li class="discount">Rs. <?php echo $price ?>/-</li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                    <div class="new-product">
-                                        <span>New</span>
-                                    </div>
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6">
-                            <div class="single-product mb-60">
-                                <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
-                                </div>
-                                <div class="product-caption">
-                                    <div class="product-ratting">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                        <i class="fa fa-star low-star"></i>
-                                    </div>
-                                    <h4><a href="#">Green Dress with details</a></h4>
-                                    <div class="price">
-                                        <ul>
-                                            <li>$40.00</li>
-                                            <li class="discount">$60.00</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                        <?php endwhile; ?>
+                        <?php wp_reset_query(); ?>
                     </div>
                 </div>
 
-                <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
+                <!-- <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
                     <div class="row">
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                     <div class="new-product">
                                         <span>New</span>
                                     </div>
@@ -611,7 +334,7 @@ if (is_front_page()) {
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                 </div>
                                 <div class="product-caption">
                                     <div class="product-ratting">
@@ -634,7 +357,7 @@ if (is_front_page()) {
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                     <div class="new-product">
                                         <span>New</span>
                                     </div>
@@ -660,7 +383,7 @@ if (is_front_page()) {
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                 </div>
                                 <div class="product-caption">
                                     <div class="product-ratting">
@@ -683,7 +406,7 @@ if (is_front_page()) {
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                 </div>
                                 <div class="product-caption">
                                     <div class="product-ratting">
@@ -706,7 +429,7 @@ if (is_front_page()) {
                         <div class="col-xl-4 col-lg-4 col-md-6">
                             <div class="single-product mb-60">
                                 <div class="product-img">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/img/xproduct1.png.pagespeed.ic.1xDh2tYQRf.webp" alt="">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/img/ring-product.webp" alt="">
                                     <div class="new-product">
                                         <span>New</span>
                                     </div>
@@ -730,7 +453,7 @@ if (is_front_page()) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -903,3 +626,17 @@ if (is_front_page()) {
 
 <?php
 get_footer();
+
+function printrating($rating_count)
+{
+    for ($i = 0; $i < $rating_count; $i++) {
+?>
+        <i class="fa fa-star"></i>
+    <?php
+    }
+    for ($i = 0; $i < 5 - $rating_count; $i++) {
+    ?>
+        <i class="fa fa-star low-star"></i>
+<?php
+    }
+}

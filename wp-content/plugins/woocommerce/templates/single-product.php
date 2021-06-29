@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Template for displaying all single products
  *
@@ -15,48 +16,42 @@
  * @version     1.6.4
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
+get_header('shop'); ?>
+<div class="single-slider slider-height2 d-flex align-items-center" data-background="<?php echo get_template_directory_uri(); ?>/img/category.jpg" style="background-image: url(&quot;<?php echo get_template_directory_uri(); ?>/img/category.jpg&quot;);">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				<div class="hero-cap text-center">
+					<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+						<h2 class="woocommerce-products-header__title page-title">Product Details</h2>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<?php
+/**
+ * woocommerce_before_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ */
+do_action('woocommerce_before_main_content');
+?>
 
-get_header( 'shop' ); ?>
+<?php while (have_posts()) : ?>
+	<?php the_post(); ?>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+	<?php wc_get_template_part('content', 'single-product'); ?>
 
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
-
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
-		<?php endwhile; // end of the loop. ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+<?php endwhile; // end of the loop. 
+?>
 
 <?php
-get_footer( 'shop' );
+get_footer('shop');
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

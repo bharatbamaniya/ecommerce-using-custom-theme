@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Template Contact
  *
@@ -8,13 +9,13 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
+$container = get_theme_mod('understrap_container_type');
 
-if ( is_front_page() ) {
-	get_template_part( 'global-templates/hero' );
+if (is_front_page()) {
+	get_template_part('global-templates/hero');
 }
 ?>
 
@@ -22,34 +23,31 @@ if ( is_front_page() ) {
 
 <div class="wrapper contact-us-template" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+	<div class="single-slider slider-height2 d-flex align-items-center" data-background="assets/img/hero/category.jpg" style="background-image: url(&quot;assets/img/hero/category.jpg&quot;);">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="hero-cap text-center">
+						<h2>Contact Us</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<div class="row">
+	<section class="contact-section">
+		<div class="container">
+			<div class="d-none d-sm-block mb-5 pb-4">
+				<!-- // map -->
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<h2 class="contact-title">Get in Touch</h2>
+				</div>
 
-        <div class="col-lg-7">
-				<main class="site-main" id="main" role="main">
-
-					<?php
-					while ( have_posts() ) {
-						the_post();
-						get_template_part( 'loop-templates/content', 'page' );
-
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) {
-							comments_template();
-						}
-					}
-					?>
-
-				</main><!-- #main -->
-        </div>
-                    <div class="offset-lg-1 col-lg-4">
-                    <div class="iframe-holder"></div>
-        </div>
-		</div><!-- .row end -->
-
-	</div><!-- #content -->
-
+			</div>
+		</div>
+	</section>
 </div><!-- #full-width-page-wrapper -->
 
 <?php
