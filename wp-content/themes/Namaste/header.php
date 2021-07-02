@@ -115,7 +115,9 @@ $container = get_theme_mod('understrap_container_type');
 					<?php
 					$cart_count = WC()->cart->get_cart_contents_count();
 					$cart_count_str = $cart_count > 0 && $cart_count <= 9 ?  "0" . strval($cart_count) :  $cart_count;
+
 					$btn_text = is_user_logged_in() ? 'Log out' : 'Sign In';
+
 					?>
 
 					<a href="<?php echo home_url('/cart') ?>" class="cart-item-holder">
@@ -128,8 +130,6 @@ $container = get_theme_mod('understrap_container_type');
 					<?php if ('container' === $container) : ?>
 					</div><!-- .container -->
 				<?php endif; ?>
-
-
 
 			</nav><!-- .site-navigation -->
 
