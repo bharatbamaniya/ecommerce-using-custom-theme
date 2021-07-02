@@ -238,6 +238,30 @@ $sm: 576px;
 	}
 }
 
+body {
+    font-family: "Poppins",sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+div{
+	display: block;
+}
+.contact-section {
+    padding: 40px;
+	margin: auto;
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 991px){
+.contact-section {
+    padding: 70px 0 40px;
+}
+}
+
 #wrapper-footer {
 	padding: 30px 0;
 	@media (max-width: $sm) {
