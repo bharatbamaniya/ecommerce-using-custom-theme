@@ -17,6 +17,8 @@
  */
 
 defined('ABSPATH') || exit;
+
+
 ?>
 
 <div class="single-slider slider-height2 d-flex align-items-center mb-85" data-background="<?php echo get_template_directory_uri(); ?>/img/category.jpg" style="background-image: url(&quot;<?php echo get_template_directory_uri(); ?>/img/category.jpg&quot;);">
@@ -25,7 +27,7 @@ defined('ABSPATH') || exit;
 			<div class="col-xl-12">
 				<div class="hero-cap text-center">
 					<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-						<h2 class="woocommerce-products-header__title page-title">Cart</h2>
+						<h2 class="woocommerce-products-header__title page-title"><?php wp_title(''); ?></h2>
 					<?php endif; ?>
 				</div>
 			</div>
